@@ -9,6 +9,14 @@
         My gnarly Nuxt.js project
       </h2>
       <div class="links">
+        <nuxt-link v-for="post in posts"
+          :to="{name: 'posts-id', params: {id: post.id}}"
+          :key="post.id"
+          class="button--grey"
+        >
+          {{post.title}}
+
+        </nuxt-link>
         <a
           href="https://nuxtjs.org/"
           target="_blank"
@@ -24,9 +32,15 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+
 export default {
   components: {
     Logo
+  },
+  computed: {
+    posts () {
+      return this.$store.state.posts.all
+    }
   }
 }
 </script>
