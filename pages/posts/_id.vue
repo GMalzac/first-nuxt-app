@@ -28,7 +28,13 @@ export default {
   },
   head () {
     return {
-      title: this.post.title
+      title: this.post.title,
+      meta: [
+        {name: 'twitter:title', content: this.post.title},
+        {name: 'twitter:description', content: this.post.content},
+        {name: 'twitter:image', content: 'https://s3-eu-west-1.amazonaws.com/tpd/logos/526905350000640005771810/0x0.png'},
+        {name: 'twitter:card', content: "summary_large_image"}
+      ]
     }
   },
   computed: {

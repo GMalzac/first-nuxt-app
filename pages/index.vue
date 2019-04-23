@@ -39,7 +39,13 @@ export default {
   },
   head () {
     return {
-      title: "Home page"
+      title: "Home page",
+      meta: [
+        {name: 'twitter:title', content: "Greg's first Nuxt App"},
+        {name: 'twitter:description', content: "This is the very first app!!"},
+        {name: 'twitter:image', content: 'https://s3-eu-west-1.amazonaws.com/tpd/logos/526905350000640005771810/0x0.png'},
+        {name: 'twitter:card', content: "summary_large_image"}
+      ]
     }
   },
   computed: {
