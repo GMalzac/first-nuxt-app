@@ -37,6 +37,11 @@ export default {
   components: {
     Logo
   },
+  head () {
+    return {
+      title: "Home page"
+    }
+  },
   computed: {
     posts () {
       return this.$store.state.posts.all
