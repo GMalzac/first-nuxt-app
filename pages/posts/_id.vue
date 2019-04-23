@@ -4,6 +4,12 @@
       <h1 class="title">{{post.title}}</h1>
       <p>{{post.content}}</p>
     </article>
+    <aside>
+      <h3>Posts you might enjoy</h3>
+      <ul>
+        <li v-for='post in relatedPosts'>{{post.title}}</li>
+      </ul>
+    </aside>
   </div>
 </template>
 
@@ -37,6 +43,9 @@ export default {
   computed: {
     post () {
       return this.posts.find(post => post.id === this.id)
+    },
+    relatedPosts () {
+      return this.posts.filter(post => post.id !== this.id)
     }
   }
 }
