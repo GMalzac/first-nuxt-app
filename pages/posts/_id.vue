@@ -26,6 +26,11 @@ export default {
       posts: []
     }
   },
+  head () {
+    return {
+      title: this.post.title
+    }
+  },
   computed: {
     post () {
       return this.$store.state.posts.all.find(post => post.id === this.id)
