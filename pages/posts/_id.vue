@@ -7,7 +7,9 @@
     <aside>
       <h3>Posts you might enjoy</h3>
       <ul>
-        <li v-for='post in relatedPosts'>{{post.title}}</li>
+        <li v-for='related in relatedPosts'>
+          <a :href="`/posts/${related.id}`">{{related.title}}</a>
+        </li>
       </ul>
     </aside>
   </div>
